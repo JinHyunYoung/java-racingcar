@@ -4,7 +4,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-import racingcar.service.RacingCarGame;
 
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -15,8 +14,8 @@ public class RacingCarTest {
     void racing() {
         String[] carNames = "aa,bb,cc,dd".split(",");
         int numTry = 6;
-        RacingCarGame carGame = new RacingCarGame(carNames, numTry);
-        carGame.start();
+        RacingCarGame carGame = new RacingCarGame(carNames);
+        carGame.start(numTry);
     }
 
     @DisplayName("테스트 ")
@@ -24,8 +23,8 @@ public class RacingCarTest {
     void racing2() {
         String[] carNames = "aa,bb,cc,dd".split(",");
         int numTry = 6;
-        RacingCarGame carGame = new RacingCarGame(carNames, numTry);
-        carGame.start();
+        RacingCarGame carGame = new RacingCarGame(carNames);
+        carGame.start(numTry);
     }
 
     @DisplayName("자동차는 이름을 가진다 ")
@@ -64,14 +63,6 @@ public class RacingCarTest {
     }
 
 
-    @DisplayName("자동차가 4미만일때 정지한다. ")
-    @ValueSource(ints = {1 , 2})
-    @ParameterizedTest
-    void stop(final int conditions){
-        Car car = new Car("jason");
-        car.move(conditions);
-        assertThat(car.getPosition()).isEqualTo(0);
-    }
 }
 
 

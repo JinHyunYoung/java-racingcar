@@ -24,19 +24,14 @@ public class Car {
     }
 
     public void move() {
-        Random random = new Random();
-        final int randomNumber = getRandom();
-        move(randomNumber);
+        if (getRandom() > 4) {
+            position++;
+        }
     }
 
     protected int getRandom() {
         return new Random().nextInt(10);
     }
 
-    public void move(final int randomnumber) {
-        if (randomnumber > 4) {
-            position++;
-        }
-    }
 
 }

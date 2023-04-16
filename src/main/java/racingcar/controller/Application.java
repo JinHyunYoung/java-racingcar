@@ -1,6 +1,6 @@
 package racingcar.controller;
 
-import racingcar.service.RacingCarGame;
+import racingcar.domain.RacingCarGame;
 
 import java.util.Scanner;
 
